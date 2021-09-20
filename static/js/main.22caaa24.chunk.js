@@ -1,0 +1,2 @@
+(this["webpackJsonpreact-card-developer"]=this["webpackJsonpreact-card-developer"]||[]).push([[0],{11:function(e,t,c){"use strict";c.r(t);var n=c(1),r=c.n(n),a=c(3),o=c.n(a),s=(c(8),c(9),c(0));var d=function(){return Object(s.jsx)("div",{className:"App"})};o.a.render(Object(s.jsx)(r.a.StrictMode,{children:Object(s.jsx)(d,{})}),document.getElementById("root"))},8:function(e,t,c){},9:function(e,t,c){}},[[11,1,2]]]);
+//# sourceMappingURL=main.22caaa24.chunk.js.map
