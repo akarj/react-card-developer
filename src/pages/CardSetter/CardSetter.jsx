@@ -24,7 +24,6 @@ export default function CardSetter() {
         <div className="solidDiv">
           <button
             className="solidColor"
-            title="solidColorButton"
             onMouseEnter={() => setCardDescText(solidTextLine)}
             onMouseLeave={() => setCardDescText("")}
             onClick={clickHandler}
@@ -44,10 +43,7 @@ export default function CardSetter() {
         </div>
       </div>
       <div className="cardDesc">
-        <span className="cardDescText">
-          {/* {cardDescText} */}
-          Generate a card with Image as Background...
-        </span>
+        <span className="cardDescText">{cardDescText}</span>
       </div>
     </div>
   );

@@ -17,16 +17,15 @@ div.cardSetter {
   }
   div.cardInputType {
     height: 20vh;
-    // background-color: rgb(19, 221, 12);
     display: flex;
+    font-family: "Lato", sans-serif;
+
     div.solidDiv {
       flex: 1;
       padding: 3rem;
-      // background-color: rgb(63, 168, 60);
     }
     div.imageDiv {
       flex: 1;
-      // background-color: rgb(8, 88, 5);
       padding: 3rem;
     }
     button {
@@ -35,6 +34,14 @@ div.cardSetter {
       border-radius: 8px;
       font-size: 1.5rem;
       cursor: pointer;
+    }
+  }
+
+  div.cardDesc {
+    margin-top: 2rem;
+    span.cardDescText {
+      font-size: 1.75rem;
+      font-family: "Lato", sans-serif;
     }
   }
 }
