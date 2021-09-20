@@ -1,58 +1,129 @@
 import "./CardSetter.scss";
 import { useState } from "react";
 
+export function SolidModel() {
+  return;
+}
+
+export function ImageModel() {
+  return <div className="imageModel">Image Model</div>;
+}
+
 export default function CardSetter() {
   const solidTextLine = "Generate a card with Solid Background...";
   const imageInputTextLine = "Generate a card with Image as Background...";
   const [cardDescText, setCardDescText] = useState("");
-  const [inputDiv, setInputDiv] = useState(false);
+  const [inputDiv, setInputDiv] = useState(true);
+  const [textColor, setTextColor] = useState(null);
+  const [backgroundColor, setbackgroundColor] = useState(null);
   const clickHandler = (e) => {
     const name = e.target.className;
+    console.log(name);
     setInputDiv(true);
     return name === "solidColor" ? <SolidModel /> : <ImageModel />;
   };
 
+  const ChangeHandler = (e) => {
+    console.log(e.target);
+  };
+
+  const submitHandler = (e) => {
+    console.log(e.target);
+  };
+
   return (
-    <div
-      className="cardSetter"
-      style={inputDiv ? { opacity: 0.5, pointerEvents: "none" } : {}}
-    >
-      <div className="titleDiv">
-        <span className="nameCard">Generate Card</span>
-      </div>
-      <div className="cardInputType">
-        <div className="solidDiv">
-          <button
-            className="solidColor"
-            onMouseEnter={() => setCardDescText(solidTextLine)}
-            onMouseLeave={() => setCardDescText("")}
-            onClick={clickHandler}
-          >
-            Solid
-          </button>
+    <div className="container">
+      <div
+        className="cardSetter"
+        style={inputDiv ? { display: "none", pointerEvents: "none" } : {}}
+      >
+        <div className="titleDiv">
+          <span className="nameCard">Generate Card</span>
         </div>
-        <div className="imageDiv">
-          <button
-            className="imageInput"
-            onMouseEnter={() => setCardDescText(imageInputTextLine)}
-            onMouseLeave={() => setCardDescText("")}
-            onClick={clickHandler}
-          >
-            Image
-          </button>
+        <div className="cardInputType">
+          <div className="solidDiv">
+            <button
+              className="solidColor"
+              onMouseEnter={() => setCardDescText(solidTextLine)}
+              onMouseLeave={() => setCardDescText("")}
+              onClick={clickHandler}
+            >
+              Solid
+            </button>
+          </div>
+          <div className="imageDiv">
+            <button
+              className="imageInput"
+              onMouseEnter={() => setCardDescText(imageInputTextLine)}
+              onMouseLeave={() => setCardDescText("")}
+              onClick={clickHandler}
+            >
+              Image
+            </button>
+          </div>
+        </div>
+        <div className="cardDesc">
+          <span className="cardDescText">{cardDescText}</span>
         </div>
       </div>
-      <div className="cardDesc">
-        <span className="cardDescText">{cardDescText}</span>
+
+      <div className="solidModelContainer">
+        <div className="name">
+          <span className="modelName">Solid Card Generator</span>
+          <span className="closeModelDiv">x</span>
+        </div>
+        <div className="values">
+          <div className="ValueQuantity">
+            <div className="valueName">Background Color</div>
+            <div className="backgroundColorValueQuantity valueInputDiv">
+              <label
+                htmlFor="backgroundColorValueInput"
+                className="backgroundColorValueInputLabel valueInputLabel"
+              >
+                Hex Code
+              </label>
+              <input
+                className="valueInput"
+                type="text"
+                name="backgroundColorValueInput"
+                min="3"
+                max="6"
+                placeholder="#"
+                onChange={() => ChangeHandler}
+              />
+            </div>
+          </div>
+          <div className="valueQuantity">
+            <div className="valueName">Text Color</div>
+            <div className="textColorValueQuantity valueInputDiv">
+              <label
+                htmlFor="textColorValueInput "
+                className="textColorValueInputLabel valueInputLabel"
+              >
+                Hex Code
+              </label>
+              <input
+                className="valueInput"
+                type="text"
+                name="textColorValueInput"
+                min="3"
+                max="6"
+                placeholder="#"
+                onChange={() => ChangeHandler}
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="valueRepresentation"
+          style={{ backgroundColor, color: textColor }}
+        >
+          Text Color
+        </div>
+        <div className="submitButtonDiv">
+          <button onClick={submitHandler}> create card</button>
+        </div>
       </div>
     </div>
   );
-}
-
-function SolidModel() {
-  return <div className="solidModel">solid Model</div>;
-}
-
-function ImageModel() {
-  return <div className="imageModel">Image Model</div>;
 }

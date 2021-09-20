@@ -45,3 +45,15 @@ div.cardSetter {
     }
   }
 }
+
+div.solidModelContainer {
+  position: absolute;
+  top: calc(30vh - 2.5rem);
+  left: 40vw;
+  // background-color: #c74848;
+  height: 50vh;
+  width: 30rem;
+  // transform: translate(-50%, -50%);
+  border: 5px solid #ffff00;
+  padding: 10px;
+}
