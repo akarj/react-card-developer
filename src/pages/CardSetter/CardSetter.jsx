@@ -1,6 +1,7 @@
 import "./CardSetter.scss";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { CardContext } from "../../Context/Context";
 
 export default function CardSetter() {
   // [Text Line]
@@ -17,13 +18,20 @@ export default function CardSetter() {
   });
   const [imageModelStyle, setImageModelStyle] = useState({ display: "none" });
   const [solidModelStyle, setSolidModelStyle] = useState({ display: "none" });
-  const [textColor, setTextColor] = useState("black");
-  const [backgroundColor, setBackgroundColor] = useState("#fcba03");
   const [modelContainerStyle, setModelContainerStyle] = useState({
     zIndex: "10",
     display: "none",
   });
   const [fileName, setFileName] = useState("");
+
+  const {
+    file,
+    setFile,
+    backgroundColor,
+    setBackgroundColor,
+    color,
+    setColor,
+  } = useContext(CardContext);
 
   // [Funtions]
   const clickHandler = (e) => {
@@ -55,7 +63,7 @@ export default function CardSetter() {
     if (isValid) {
       if (name === "backgroundColorValueInput") {
         setBackgroundColor(value);
-      } else if (name === "textColorValueInput") setTextColor(value);
+      } else if (name === "textColorValueInput") setColor(value);
     }
   };
 
@@ -84,6 +92,7 @@ export default function CardSetter() {
     const [file] = e.target.files;
     // Get the file name and size
     const { name: fileName } = file;
+    setFile(file);
 
     const fileNameAndSize = `${fileName}`;
     setFileName(fileNameAndSize);
@@ -241,10 +250,7 @@ export default function CardSetter() {
             </div>
           </div>
           <div className="valueRepresentation">
-            <div
-              className="workingDiv"
-              style={{ backgroundColor, color: textColor }}
-            >
+            <div className="workingDiv" style={{ backgroundColor, color }}>
               <span>Text Color</span>
             </div>
           </div>
