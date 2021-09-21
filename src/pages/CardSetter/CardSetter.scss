@@ -157,3 +157,93 @@ div.solidModelContainer {
     }
   }
 }
+
+div.imageModelContainer {
+  position: absolute;
+  top: calc(30vh - 2.5rem);
+  left: 36vw;
+  height: 55vh;
+  width: 30rem;
+  border: 2px solid #030303;
+  border-radius: 15px;
+  padding: 10px;
+  // background-color: rgb(179, 179, 114);
+
+  div.name {
+    margin: 0;
+    padding: 0;
+    // background-color: rgb(172, 52, 52);
+    display: flex;
+    span.modelName {
+      flex: 1.9;
+      font-size: 2rem;
+    }
+    span.closeModelDiv {
+      position: relative;
+      flex: 0.1;
+      padding: 0.2rem;
+      cursor: pointer;
+      transform: translate(15%, -20%);
+      &:hover {
+        z-index: 10;
+        border-top-right-radius: 15px;
+      }
+    }
+  }
+  div.info {
+    height: 2rem;
+    font-size: 1.2rem;
+    span {
+      position: relative;
+      top: 2.5rem;
+    }
+  }
+
+  div.values {
+    display: block;
+    margin: 1.5rem 0.5rem 0.5rem 0.5rem;
+    display: flex;
+    height: 8rem;
+    box-shadow: none;
+
+    button {
+      font-family: "Lato", sans-serif;
+      height: 2.5rem;
+      width: 7rem;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      background-color: transparent;
+      position: relative;
+      top: 2rem;
+      outline: none;
+      border: none;
+      box-shadow: none;
+      &:hover {
+        border: 1px solid black;
+      }
+    }
+
+    div:nth-child(1) {
+      flex: 1;
+      // background-color: rgb(120, 132, 199);
+    }
+    div:nth-child(2) {
+      flex: 1;
+      // background-color: rgb(29, 131, 51);
+    }
+  }
+
+  div.submitButtonDiv {
+    // background-color: cadetblue;
+    // height: 3rem;
+    button {
+      height: 2.5rem;
+      padding: 0 3rem;
+      font-size: 1.25rem;
+      background-color: transparent;
+      border-radius: 8px;
+      // transform: translateY(-70%);
+      cursor: pointer;
+    }
+  }
+}

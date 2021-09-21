@@ -75,65 +75,87 @@ export default function CardSetter() {
         </div>
       </div>
 
-      <div className="solidModelContainer">
+      <div className="imageModelContainer">
         <div className="name">
-          <span className="modelName">Solid Card Generator</span>
+          <span className="modelName">Image Generator</span>
           <span className="closeModelDiv">x</span>
         </div>
+        <div className="info">
+          <span>Input image from</span>
+        </div>
         <div className="values">
-          <div className="valueQuantity">
-            <div className="valueName">Background Color</div>
-            <div className="backgroundColorValueQuantity valueInputDiv">
-              <label
-                htmlFor="backgroundColorValueInput"
-                className="backgroundColorValueInputLabel valueInputLabel"
-              >
-                Hex Code
-              </label>
-              <input
-                className="valueInput"
-                type="text"
-                name="backgroundColorValueInput"
-                min="3"
-                max="6"
-                placeholder="#"
-                onChange={ChangeHandler}
-              />
-            </div>
+          <div className="webCamDiv">
+            <button>Camera</button>
           </div>
-          <div className="valueQuantity">
-            <div className="valueName">Text Color</div>
-            <div className="textColorValueQuantity valueInputDiv">
-              <label
-                htmlFor="textColorValueInput "
-                className="textColorValueInputLabel valueInputLabel"
-              >
-                Hex Code
-              </label>
-              <input
-                className="valueInput"
-                type="text"
-                name="textColorValueInput"
-                min="3"
-                max="6"
-                placeholder="#"
-                onChange={ChangeHandler}
-              />
-            </div>
+          <div className="importFromFilesDiv">
+            <button>Files</button>
           </div>
         </div>
-        <div className="valueRepresentation">
-          <div
-            className="workingDiv"
-            style={{ backgroundColor, color: textColor }}
-          >
-            <span>Text Color</span>
-          </div>
-        </div>
+
         <div className="submitButtonDiv">
           <button onClick={submitHandler}> create card</button>
         </div>
       </div>
     </div>
+    //   <div className="solidModelContainer">
+    //     <div className="name">
+    //       <span className="modelName">Solid Card Generator</span>
+    //       <span className="closeModelDiv">x</span>
+    //     </div>
+    //     <div className="values">
+    //       <div className="valueQuantity">
+    //         <div className="valueName">Background Color</div>
+    //         <div className="backgroundColorValueQuantity valueInputDiv">
+    //           <label
+    //             htmlFor="backgroundColorValueInput"
+    //             className="backgroundColorValueInputLabel valueInputLabel"
+    //           >
+    //             Hex Code
+    //           </label>
+    //           <input
+    //             className="valueInput"
+    //             type="text"
+    //             name="backgroundColorValueInput"
+    //             min="3"
+    //             max="6"
+    //             placeholder="#"
+    //             onChange={ChangeHandler}
+    //           />
+    //         </div>
+    //       </div>
+    //       <div className="valueQuantity">
+    //         <div className="valueName">Text Color</div>
+    //         <div className="textColorValueQuantity valueInputDiv">
+    //           <label
+    //             htmlFor="textColorValueInput "
+    //             className="textColorValueInputLabel valueInputLabel"
+    //           >
+    //             Hex Code
+    //           </label>
+    //           <input
+    //             className="valueInput"
+    //             type="text"
+    //             name="textColorValueInput"
+    //             min="3"
+    //             max="6"
+    //             placeholder="#"
+    //             onChange={ChangeHandler}
+    //           />
+    //         </div>
+    //       </div>
+    //     </div>
+    //     <div className="valueRepresentation">
+    //       <div
+    //         className="workingDiv"
+    //         style={{ backgroundColor, color: textColor }}
+    //       >
+    //         <span>Text Color</span>
+    //       </div>
+    //     </div>
+    //     <div className="submitButtonDiv">
+    //       <button onClick={submitHandler}> create card</button>
+    //     </div>
+    //   </div>
+    // </div>
   );
 }
