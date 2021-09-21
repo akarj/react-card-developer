@@ -53,7 +53,6 @@ export default function CardSetter() {
       };
       setImageModelStyle(newImageModelStyle);
     }
-    // setInputDiv(true);
   };
 
   const ChangeHandler = (e) => {
@@ -90,12 +89,10 @@ export default function CardSetter() {
   const inputFromFiles = (e) => {
     console.log(e.target);
     const [file] = e.target.files;
-    // Get the file name and size
     const { name: fileName } = file;
     setFile(file);
-
-    const fileNameAndSize = `${fileName}`;
-    setFileName(fileNameAndSize);
+    const Name = `${fileName}`;
+    setFileName(Name);
   };
 
   const inputFromCamera = (e) => {
@@ -255,7 +252,11 @@ export default function CardSetter() {
             </div>
           </div>
           <div className="submitButtonDiv">
-            <button onClick={submitHandler}> create card</button>
+            <button onClick={submitHandler}>
+              <Link className="link" to="/workplace">
+                create card
+              </Link>
+            </button>
           </div>
         </div>
       </div>

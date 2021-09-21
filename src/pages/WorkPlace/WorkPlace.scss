@@ -1,0 +1,34 @@
+div.workPlace {
+  height: calc(97.5vh - 2.5rem);
+  display: flex;
+
+  div.leftPanel {
+    flex: 1.5;
+    padding-top: 8rem;
+    & > div {
+      height: 3rem;
+      width: 13rem;
+      margin: 1rem;
+      border: 2px solid #000;
+      cursor: pointer;
+
+      & > div {
+        span {
+          font-size: 1.5rem;
+          position: relative;
+          top: 0.35rem;
+          font-family: "Lora", serif;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  div.rightPanel {
+    //     background-color: rgb(19, 39, 105);
+    flex: 8.5;
+    //     &:hover {
+    //       //       border-left: 2px solid black;
+    //     }
+  }
+}
