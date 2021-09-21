@@ -14,7 +14,8 @@ function App() {
           <Home />
             <CardSetter /> */}
           <Route path="/" exact>
-            <CardSetter />
+            {/* <CardSetter /> */}
+            <WorkPlace />
           </Route>
           <Route path="/workplace">
             <WorkPlace />
