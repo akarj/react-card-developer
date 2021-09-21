@@ -49,11 +49,111 @@ div.cardSetter {
 div.solidModelContainer {
   position: absolute;
   top: calc(30vh - 2.5rem);
-  left: 40vw;
-  // background-color: #c74848;
-  height: 50vh;
+  left: 36vw;
+  height: 55vh;
   width: 30rem;
-  // transform: translate(-50%, -50%);
-  border: 5px solid #ffff00;
+  border: 2px solid #030303;
+  border-radius: 15px;
   padding: 10px;
+  // background-color: rgb(179, 179, 114);
+
+  div.name {
+    margin: 0;
+    padding: 0;
+    // background-color: rgb(172, 52, 52);
+    display: flex;
+    span.modelName {
+      flex: 1.9;
+      font-size: 2rem;
+    }
+    span.closeModelDiv {
+      position: relative;
+      flex: 0.1;
+      padding: 0.2rem;
+      cursor: pointer;
+      transform: translate(15%, -20%);
+      &:hover {
+        z-index: 10;
+        border-top-right-radius: 15px;
+      }
+    }
+  }
+
+  div.values {
+    // background-color: rgb(179, 151, 151);
+    display: block;
+    margin: 1.5rem 0.5rem 0.5rem 0.5rem;
+
+    div.valueQuantity {
+      margin-top: 0.5rem;
+      padding: 0rem 0rem 0rem 0rem;
+      // background-color: rgb(104, 83, 83);
+      display: flex;
+
+      div.valueName {
+        flex: 1.1;
+        text-align: center;
+        font-size: 1.1rem;
+        font-family: "Roboto Slab", serif;
+      }
+      div.valueInputDiv {
+        flex: 0.9;
+        display: flex;
+        text-align: left;
+        height: 1.5rem;
+
+        label {
+          font-size: 0.8rem;
+          position: relative;
+          top: 0.25rem;
+        }
+        input {
+          margin-left: 0.45rem;
+          width: 5rem;
+          border: none;
+          outline: none;
+          border-bottom: 2px solid black;
+          &::placeholder {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  div.valueRepresentation {
+    height: 11rem;
+    width: auto;
+    // border: 2px solid black;
+    div.workingDiv {
+      border: 2px solid black;
+      height: 7rem;
+      width: 16rem;
+      margin: 3rem 0rem 0rem 5.5rem;
+      padding: 0rem 0rem 0rem 0rem;
+      // background-color: #2c1a89;
+      border-radius: 10px;
+      span {
+        position: relative;
+        top: 4.5rem;
+        font-size: 1.5rem;
+        text-decoration: underline;
+        pointer-events: none;
+      }
+    }
+  }
+
+  div.submitButtonDiv {
+    // background-color: cadetblue;
+    // height: 3rem;
+    button {
+      height: 2.5rem;
+      padding: 0 3rem;
+      font-size: 1.25rem;
+      background-color: transparent;
+      border-radius: 8px;
+      transform: translateY(-70%);
+      cursor: pointer;
+    }
+  }
 }

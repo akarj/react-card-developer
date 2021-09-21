@@ -14,8 +14,9 @@ export default function CardSetter() {
   const imageInputTextLine = "Generate a card with Image as Background...";
   const [cardDescText, setCardDescText] = useState("");
   const [inputDiv, setInputDiv] = useState(true);
-  const [textColor, setTextColor] = useState(null);
-  const [backgroundColor, setbackgroundColor] = useState(null);
+  const [textColor, setTextColor] = useState("#00c0cc");
+  const [backgroundColor, setBackgroundColor] = useState("#fcba03");
+  const hexCheckerHex = new RegExp("^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$");
   const clickHandler = (e) => {
     const name = e.target.className;
     console.log(name);
@@ -24,7 +25,14 @@ export default function CardSetter() {
   };
 
   const ChangeHandler = (e) => {
-    console.log(e.target);
+    const name = e.target.name;
+    const value = "#" + e.target.value;
+    const isValid = hexCheckerHex.test(value);
+    if (isValid) {
+      if (name === "backgroundColorValueInput") {
+        setBackgroundColor(value);
+      } else if (name === "textColorValueInput") setTextColor(value);
+    }
   };
 
   const submitHandler = (e) => {
@@ -73,7 +81,7 @@ export default function CardSetter() {
           <span className="closeModelDiv">x</span>
         </div>
         <div className="values">
-          <div className="ValueQuantity">
+          <div className="valueQuantity">
             <div className="valueName">Background Color</div>
             <div className="backgroundColorValueQuantity valueInputDiv">
               <label
@@ -89,7 +97,7 @@ export default function CardSetter() {
                 min="3"
                 max="6"
                 placeholder="#"
-                onChange={() => ChangeHandler}
+                onChange={ChangeHandler}
               />
             </div>
           </div>
@@ -109,16 +117,18 @@ export default function CardSetter() {
                 min="3"
                 max="6"
                 placeholder="#"
-                onChange={() => ChangeHandler}
+                onChange={ChangeHandler}
               />
             </div>
           </div>
         </div>
-        <div
-          className="valueRepresentation"
-          style={{ backgroundColor, color: textColor }}
-        >
-          Text Color
+        <div className="valueRepresentation">
+          <div
+            className="workingDiv"
+            style={{ backgroundColor, color: textColor }}
+          >
+            <span>Text Color</span>
+          </div>
         </div>
         <div className="submitButtonDiv">
           <button onClick={submitHandler}> create card</button>
