@@ -84,9 +84,23 @@ div.solidModelContainer {
     display: block;
     margin: 1.5rem 0.5rem 0.5rem 0.5rem;
 
+    // div.webCamDiv,
+    // div.importFromFilesDiv {
+    //   input {
+    //     // height: 2.5rem;
+    //     // padding: 0 3rem;
+    //     // font-size: 1.25rem;
+    //     // background-color: transparent;
+    //     // border-radius: 8px;
+    //     // transform: translateY(-70%);
+    //     // cursor: pointer;
+
+    //   }
+    // }
+
     div.valueQuantity {
       margin-top: 0.5rem;
-      padding: 0rem 0rem 0rem 0rem;
+      padding: 0;
       // background-color: rgb(104, 83, 83);
       display: flex;
 
@@ -206,6 +220,30 @@ div.imageModelContainer {
     height: 8rem;
     box-shadow: none;
 
+    .importFromFilesDiv {
+      input {
+        opacity: 0;
+        width: 0.1px;
+        height: 0.1px;
+        position: absolute;
+        outline: none;
+      }
+      label {
+        height: 2.5rem;
+        width: 7rem;
+        font-size: 1.2rem;
+        border-radius: 8px;
+        background-color: transparent;
+        position: relative;
+        top: 2rem;
+        outline: none;
+        border: none;
+        box-shadow: none;
+        cursor: pointer;
+        transition: transform 0.2s ease-out;
+      }
+    }
+
     button {
       font-family: "Lato", sans-serif;
       height: 2.5rem;
@@ -218,9 +256,6 @@ div.imageModelContainer {
       outline: none;
       border: none;
       box-shadow: none;
-      &:hover {
-        border: 1px solid black;
-      }
     }
 
     div:nth-child(1) {

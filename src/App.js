@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Topbar from "./Components/topbar/Topbar";
 import WorkPlace from "./pages/WorkPlace/WorkPlace";
@@ -14,8 +14,8 @@ function App() {
           <Home />
             <CardSetter /> */}
           <Route path="/" exact>
-            {/* <CardSetter /> */}
-            <WorkPlace />
+            <CardSetter />
+            {/* <WorkPlace /> */}
           </Route>
           <Route path="/workplace">
             <WorkPlace />
